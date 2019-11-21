@@ -21,14 +21,14 @@ var vertices = [
     ];
 
 var vertexColors = [
-        vec4( 0.0, 0.0, 0.0, 1.0 ),  // black
-        vec4( 1.0, 0.0, 0.0, 1.0 ),  // red
-        vec4( 1.0, 1.0, 0.0, 1.0 ),  // yellow
-        vec4( 0.0, 1.0, 0.0, 1.0 ),  // green
-        vec4( 0.0, 0.0, 1.0, 1.0 ),  // blue
-        vec4( 1.0, 0.0, 1.0, 1.0 ),  // magenta
-        vec4( 0.0, 1.0, 1.0, 1.0 ),  // cyan
-        vec4( 1.0, 1.0, 1.0, 1.0 ),  // white
+        vec4( 0.0, 0.0, 0.0, 0.1 ),  // black
+        vec4( 0.0, 0.0, 0.0, 0.1 ),  // red
+        vec4( 0.0, 0.0, 0.0, 0.8 ),  // yellow
+        vec4( 0.0, 0.0, 0.0, 0.8 ),  // green
+        vec4( 0.0, 0.0, 0.0, 0.7 ),  // blue
+        vec4( 0.0, 0.0, 0.0, 0.7 ),  // magenta
+        vec4( 0.0, 0.0, 0.0, 0.6 ),  // cyan
+        vec4( 0.0, 0.0, 0.0, 0.6 ),  // white
     ];
 
 var radius = 1.0;
@@ -83,7 +83,8 @@ window.onload = function init() {
     gl.viewport( 0, 0, canvas.width, canvas.height );
 
     gl.clearColor( 1.0, 1.0, 1.0, 1.0 );
-
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
     gl.enable(gl.DEPTH_TEST);
 	//gl.enable(gl.CULL_FACE);
     //
